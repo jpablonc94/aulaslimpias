@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Inscripción
+{% endblock title %}
+
+{% block content %}
+
+        <!-- Jumbotron Header -->
+        <header class="jumbotron hero-spacer">
+            <h2 align="center"><strong>INSCRIPCIÓN DE CENTRO</strong></h2>
+            <br/>
+            <p align="justify">El apoyo de colegios e institutos a esta iniciativa es esencial para llegar a combatir de verdad el problema del acosos escolar con esta plataforma,
+                se pretende proporcionar una herramienta que ayude a los centros a gestionar todos los posibles casos de acoso que se producen en sus aulas.</p>
+
+            <p align="justify">Registrarse como centro implica tanto gestionar las incidencias de una manera dinámica, día a día, como promover la buena convivencia
+            en las aulas y el uso de la plataforma entre los estudiantes.</p>
+
+            <p align="justify">Una vez registrado, cada centro tendrá a su disposición una bandeja de entrada dónde podrá consultar las incidencias que le conciernen. Desde ahí, será posible
+                cambiar el estado de la incidencia a: no leída, leída, actuando, solucionada, desviada y descartada.
+                También existirá un campo para describir el procedimiento que se está llevando a cabo para solucionar el problema o para explicar por qué se ha descartado.</p>
+            <p></p>
+            <p></p>
+            <form  method="POST">
+                {% csrf_token%}
+                <br/>
+            <h2 class="text-center"><strong>Regístrate</strong></h2>
+                <br/>
+                <br/>
+            <div class="row">
+                <div class="col-md-12">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="control-group form-group">
+                                    <div class="controls">
+                                        <label for="centro"> Centro </label>
+                                        <input type="text" name="centro" class="form-control" id="centro" placeholder="Texto..." value="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="control-group form-group">
+                                    <div class="controls">
+                                        <label for="responsable"> Responsable de centro </label>
+                                        <input type="text" name="resp" class="form-control" id="responsable" placeholder="Texto..." value="" >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="control-group form-group">
+                                    <div class="controls">
+                                        <label for="email">Correo Electrónico</label>
+                                        <input type="email" name="email" class="form-control" id="email" placeholder="Correo..." value="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="control-group form-group">
+                                    <div class="controls">
+                                        <label for="fax">Teléfono/Fax</label>
+                                        <input type="numeric" name="fax" class="form-control" id="fax" placeholder="Telefono/Fax...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="control-group form-group">
+                                    <div class="controls">
+                                        <label for="user">Usuario</label>
+                                        <input type="text" name="username" class="form-control" id="user" placeholder="" value="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="control-group form-group">
+                                    <div class="controls">
+                                        <label for="pass">Contraseña</label>
+                                        <input type="password" name="pass" class="form-control" id="pass" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <button type="submit" class="btn btn-primary" id="boton">Registrarme</button>
+                </div>
+            </div>
+            </form>
+        </header>
+{% endblock content %}
+
+{% block features%}
+
+
+{% endblock features%}

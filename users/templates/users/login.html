@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}
+    Login
+{% endblock %}
+
+
+{% block content %}
+    {% for error in errors %}
+        <p>{{ error }}</p>
+    {% endfor %}
+<br/>
+<br/>
+        <header class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <form method="POST">
+                {% csrf_token %}
+                    <h2 class="text-center"><strong>Inicia sesión</h2>
+                    <p></p>
+                    <p></p>
+
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Usuario</label>
+                                <input type="text" name="usr" class="form-control" id="formGroupExampleInput" placeholder="" value="{{ form.usr }}">
+
+                            </div>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Contraseña</label>
+                                <input type="password" name="pwd" class="form-control" id="formGroupExampleInput" placeholder="" value="{{ form.pwd }}">
+                            </div>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <a href="#">He olvidado mi contraseña</a>
+                            <div class="checkbox">
+                                <label><input type="checkbox"> Guardar datos</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="boton">Aceptar</button>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </form>
+            </div>
+        </header>
+
+
+{% endblock content %}
